@@ -5,6 +5,8 @@ import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.time.LocalDateTime;
 import java.util.Set;
@@ -17,6 +19,7 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
+@EntityListeners(AuditingEntityListener.class)
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
@@ -25,10 +28,16 @@ public class User {
     String email;
     String password;
     String fullName;
-    boolean active;
 
     @ManyToMany(fetch = FetchType.LAZY)
-    @JoinColumn(name = "role_id")
+    @JoinTable(
+            name = "user_roles",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(
+                    name = "role_name",
+                    referencedColumnName = "name"
+            )
+    )
     Set<Role> role;
 
     @Enumerated(EnumType.STRING)
@@ -37,7 +46,7 @@ public class User {
     @CreatedDate
     @Column(nullable = false, updatable = false)
     LocalDateTime createdAt;
-    @CreatedDate
+    @LastModifiedDate
     @Column(nullable = false)
     LocalDateTime updatedAt;
 }

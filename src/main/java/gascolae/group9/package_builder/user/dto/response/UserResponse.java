@@ -1,9 +1,7 @@
 package gascolae.group9.package_builder.user.dto.response;
 
-import gascolae.group9.package_builder.user.entity.Role;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToMany;
+
+import gascolae.group9.package_builder.user.enums.UserStatus;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
@@ -19,12 +17,11 @@ public class UserResponse {
     String userId;
     String username;
     String email;
-    String password;
     String fullName;
-    boolean active;
+    UserStatus userStatus;
 
 
-    Set<Role> role;
+    Set<RoleResponse> role;
 
     LocalDateTime createdAt;
     LocalDateTime updatedAt;

@@ -17,6 +17,8 @@ public enum ErrorCode {
     UNAUTHENTICATED(1010, "Chưa xác thực", HttpStatus.UNAUTHORIZED),
     UNAUTHORIZED(1011, "Bạn không có quyền truy cập", HttpStatus.FORBIDDEN),
     INVALID_CREDENTIALS(1012, "Email hoặc mật khẩu không đúng", HttpStatus.UNAUTHORIZED),
+    PASSWORD_NOT_MATCH(1013, "Mật khẩu xác nhận không khớp", HttpStatus.BAD_REQUEST),
+    WRONG_PASSWORD(1014, "Mật khẩu hiện tại không đúng", HttpStatus.BAD_REQUEST),
 
     // 11xx - User
     USER_NOT_EXISTED(1101, "Người dùng không tồn tại", HttpStatus.NOT_FOUND),
@@ -25,13 +27,15 @@ public enum ErrorCode {
     INVALID_PASSWORD(1104, "Mật khẩu phải có ít nhất {min} ký tự", HttpStatus.BAD_REQUEST),
     INVALID_DOB(1105, "Tuổi của bạn phải ít nhất {min}", HttpStatus.NOT_FOUND),
     USER_EMAIL_EXISTED(1106, "Email đã tồn tại trong hệ thống", HttpStatus.BAD_REQUEST),
+    EMAIL_NOT_EXISTED(1107, "Email không tồn tại trong hệ thống", HttpStatus.NOT_FOUND),
+    EMAIL_INVALID(1108, "Email không hợp lệ", HttpStatus.BAD_REQUEST),
 
     // 12xx - RoleName and permission
     INVALID_ROLE(1201, "Vai trò không hợp lệ", HttpStatus.BAD_REQUEST),
     ROLE_EXISTED(1202, "Vai trò đã tồn tại", HttpStatus.BAD_REQUEST),
     ROLE_NOT_EXISTED(1203, "Vai trò không tồn tại", HttpStatus.NOT_FOUND),
     PERMISSION_NOT_EXISTED(1204, "Quyền không tồn tại", HttpStatus.NOT_FOUND),
-    ;
+    INVALID_STATUS(1205, "Trạng thái không hợp lệ", HttpStatus.BAD_REQUEST), ;
     private int code;
     private String message;
     private HttpStatusCode statusCode;

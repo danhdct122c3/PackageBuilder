@@ -1,7 +1,7 @@
 package gascolae.group9.package_builder.user.dto.request;
 
+import gascolae.group9.package_builder.exception.ErrorCode;
 import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
@@ -10,15 +10,8 @@ import lombok.experimental.FieldDefaults;
 @NoArgsConstructor //tạo constructor ko tham số
 @AllArgsConstructor //tạo constructor có tham số
 @FieldDefaults(level = AccessLevel.PRIVATE) //gán AccessLevel.PRIVATE cho tất cả các field
-public class UserRegisterRequest {
-    @NotBlank(message = "NOT_NULL")
-    String username;
-    @NotBlank(message = "NOT_NULL")
+public class UserUpdateRequest {
     @Email(message = "EMAIL_INVALID")
     String email;
-    @NotBlank(message = "NOT_NULL")
-    String password;
-    @NotBlank(message = "NOT_NULL")
     String fullName;
-
 }

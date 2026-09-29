@@ -10,7 +10,6 @@ import lombok.experimental.FieldDefaults;
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class RoleResponse {
-    @NotBlank(message = "NOT_NULL")
     String name;
     String description;
 

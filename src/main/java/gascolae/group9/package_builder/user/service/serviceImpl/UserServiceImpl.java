@@ -2,7 +2,9 @@ package gascolae.group9.package_builder.user.service.serviceImpl;
 
 import gascolae.group9.package_builder.exception.AppException;
 import gascolae.group9.package_builder.exception.ErrorCode;
+import gascolae.group9.package_builder.user.dto.request.ChangePasswordRequest;
 import gascolae.group9.package_builder.user.dto.request.UserRegisterRequest;
+import gascolae.group9.package_builder.user.dto.request.UserUpdateRequest;
 import gascolae.group9.package_builder.user.dto.response.UserResponse;
 import gascolae.group9.package_builder.user.entity.Role;
 import gascolae.group9.package_builder.user.entity.User;
@@ -16,11 +18,11 @@ import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Service
@@ -52,5 +54,81 @@ public class UserServiceImpl implements UserService {
 
         return userMapper.toUserResponse(userRepository.save(toUser));
 
+    }
+
+    public void updateUser(UserUpdateRequest request, String userId) {
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> new AppException(ErrorCode.USER_NOT_EXISTED));
+
+        if(request.getEmail() != null && !request.getEmail().isEmpty()) {
+            user.setEmail(request.getEmail());
+        }
+
+
+        if(request.getFullName() != null && !request.getFullName().isEmpty()) {
+            user.setFullName(request.getFullName());
+        }
+
+        userRepository.save(user);
+    }
+
+    public void changePassword(String userId, ChangePasswordRequest request) {
+        String oldPassword = request.getOldPassword();
+        String newPassword = request.getNewPassword();
+        String confirmPassword = request.getConfirmPassword();
+        if (!newPassword.equals(confirmPassword)) {
+            throw new AppException(ErrorCode.PASSWORD_NOT_MATCH);
+        }
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> new AppException(ErrorCode.USER_NOT_EXISTED));
+
+        if (!passwordEncoder.matches(oldPassword, user.getPassword())) {
+            throw new AppException(ErrorCode.WRONG_PASSWORD);
+        }
+
+        user.setPassword(passwordEncoder.encode(newPassword));
+        userRepository.save(user);
+    }
+
+    public List<UserResponse> getUsers() {
+        List<User> users = userRepository.findAll();
+        return userMapper.toUserResponse(users);
+    }
+
+    public UserResponse findUserById(String userId) {
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> new AppException(ErrorCode.USER_NOT_EXISTED));
+        return userMapper.toUserResponse(user);
+    }
+
+    public void updateUserStatus(String userId, UserStatus newStatus) {
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> new AppException(ErrorCode.USER_NOT_EXISTED));
+
+        if(newStatus == null) {
+            throw new AppException(ErrorCode.INVALID_STATUS);
+        }
+        user.setUserStatus(newStatus);
+        userRepository.save(user);
+    }
+
+    public void updateUserRoles(String userId, Set<RoleName> newRoles) {
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> new AppException(ErrorCode.USER_NOT_EXISTED));
+        if (newRoles == null || newRoles.isEmpty()) {
+            throw new AppException(ErrorCode.INVALID_ROLE);
+        }
+        Set<Role> roles = new HashSet<>();
+        for (RoleName roleName : newRoles) {
+            Role role = roleRepository.findById(roleName)
+                    .orElseGet(() -> roleRepository.save(Role.builder()
+                            .name(roleName)
+                            .description("Role: " + roleName)
+                            .build()));
+            roles.add(role);
+        }
+
+        user.setRole(roles);
+        userRepository.save(user);
     }
 }
