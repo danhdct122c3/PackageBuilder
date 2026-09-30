@@ -21,3 +21,12 @@ spring:
 
   jackson:
     time-zone: Asia/Ho_Chi_Minh
+
+jwt:
+  signerKey: "hh@-#4O@;HV?=vx[,V&1,o6m>cL}47d/V&kh*6c]A}YV!6^aTrKA>P%)DHj$d@)sM:B^vdZ56{!C2&jA^_[H?Z"
+  valid-duration: 1800 # inseconds
+  refreshable-duration: 5400 # inseconds
+
+app:
+  cors:
+    allowed-origins: ${CORS_ALLOWED_ORIGINS:http://localhost:3000}

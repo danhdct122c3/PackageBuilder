@@ -19,6 +19,7 @@ public enum ErrorCode {
     INVALID_CREDENTIALS(1012, "Email hoặc mật khẩu không đúng", HttpStatus.UNAUTHORIZED),
     PASSWORD_NOT_MATCH(1013, "Mật khẩu xác nhận không khớp", HttpStatus.BAD_REQUEST),
     WRONG_PASSWORD(1014, "Mật khẩu hiện tại không đúng", HttpStatus.BAD_REQUEST),
+    USER_NOT_ACTIVE(1015, "Tài khoản của bạn chưa được kích hoạt", HttpStatus.FORBIDDEN),
 
     // 11xx - User
     USER_NOT_EXISTED(1101, "Người dùng không tồn tại", HttpStatus.NOT_FOUND),

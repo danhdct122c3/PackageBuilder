@@ -82,4 +82,11 @@ public class UserController {
                 .result(userService.getUsers())
                 .build();
     }
+
+    @GetMapping("/myinfo")
+    public APIResponse<UserResponse> getCurrentUser() {
+        return APIResponse.<UserResponse>builder()
+                .result(userService.getCurrentUser())
+                .build();
+    }
 }

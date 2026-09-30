@@ -19,6 +19,7 @@ public interface UserService {
     UserResponse findUserById(String userId);
     List<UserResponse> getUsers();
     void updateUserRoles(String userId, Set<RoleName> newRoles);
+    UserResponse getCurrentUser();
 
 //    void updateUserStatus(UserUpdateStatusRequest request, String userId);
 

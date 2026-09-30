@@ -18,6 +18,9 @@ import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.security.access.prepost.PostAuthorize;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -89,12 +92,17 @@ public class UserServiceImpl implements UserService {
         user.setPassword(passwordEncoder.encode(newPassword));
         userRepository.save(user);
     }
-
+    @PreAuthorize("hasRole('ADMIN')") // kiểm tra xem người dùng có vai trò ADMIN hay không trước khi thực hiện phương thức này
     public List<UserResponse> getUsers() {
+
+        var authentication= SecurityContextHolder.getContext().getAuthentication();
+        log.info("username: " + authentication.getName());
+        authentication.getAuthorities().forEach(authority -> log.info(authority.getAuthority()));
+
         List<User> users = userRepository.findAll();
         return userMapper.toUserResponse(users);
     }
-
+    @PostAuthorize("returnObject.username == authentication.name or hasRole('ADMIN')") // kiểm tra xem người dùng có quyền truy cập vào đối tượng trả về hay không
     public UserResponse findUserById(String userId) {
         User user = userRepository.findById(userId)
                 .orElseThrow(() -> new AppException(ErrorCode.USER_NOT_EXISTED));
@@ -130,5 +138,13 @@ public class UserServiceImpl implements UserService {
 
         user.setRole(roles);
         userRepository.save(user);
+    }
+
+    public UserResponse getCurrentUser() {
+        var authentication= SecurityContextHolder.getContext().getAuthentication(); // lấy thông tin xác thực của người dùng hiện tại từ SecurityContextHolder
+        String currentUserId = authentication.getName();
+        User user = userRepository.findByUsername(currentUserId)
+                .orElseThrow(() -> new AppException(ErrorCode.USER_NOT_EXISTED));
+        return userMapper.toUserResponse(user);
     }
 }
