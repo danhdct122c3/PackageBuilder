@@ -29,6 +29,9 @@ services:
       DB_PORT: 5432
       DB_NAME: postgres
       DB_SCHEMA: package_builder
+      # Đặt trong file .env cạnh docker-compose.yml (không commit): GEMINI_API_KEY=...
+      GEMINI_API_KEY: ${GEMINI_API_KEY:-}
+      GEMINI_MODELS: ${GEMINI_MODELS:-gemini-3.8-flash,gemini-3.1-flash-lite}
     ports:
       - "8080:8080"
     depends_on:

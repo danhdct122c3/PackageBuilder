@@ -1,0 +1,158 @@
+[
+ {
+  "form": {
+   "customerName": "Nguyễn Văn abcw",
+   "companyName": "Công ty TNHH Lâm Nghiệp Xanh",
+   "contactEmail": "lamnghiep@gmail.com",
+   "contactPhone": "0912345678",
+   "projectName": "Dự án Giám sát Rừng & Tín chỉ Carbon",
+   "locationDescription": "Khu bảo tồn thiên nhiên Lâm Đồng",
+   "areaValue": "200 ha",
+   "monitoringFrequencyRaw": "",
+   "objectiveRaw": "Đánh giá sinh khối và phát hiện mất rừng",
+   "providedInputsRaw": "Ảnh viễn thám Sentinel-2 năm 2024, bản đồ ranh giới rừng",
+   "expectedOutputs": ""
+  },
+  "ai_text": "- Mục tiêu: Đánh giá sinh khối và phát hiện mất rừng\n- Dữ liệu khách đã có: Ảnh viễn thám Sentinel-2 năm 2024, bản đồ ranh giới rừng\n- Địa điểm / hiện trường: Khu bảo tồn thiên nhiên Lâm Đồng\n- Tên đơn vị (chỉ dùng để suy ra ngành): Công ty TNHH Lâm Nghiệp Xanh\n- Tên dự án: Dự án Giám sát Rừng & Tín chỉ Carbon",
+  "kw_text": "Đánh giá sinh khối và phát hiện mất rừng\nẢnh viễn thám Sentinel-2 năm 2024, bản đồ ranh giới rừng\nKhu bảo tồn thiên nhiên Lâm Đồng\nCông ty TNHH Lâm Nghiệp Xanh\nDự án Giám sát Rừng & Tín chỉ Carbon",
+  "sent": [
+   "objectiveRaw",
+   "providedInputsRaw",
+   "locationDescription",
+   "companyName",
+   "projectName"
+  ],
+  "area_value": 200,
+  "area_unit": "ha",
+  "area_warning": null,
+  "user_input": "Dữ liệu dưới đây do Sales nhập qua form. Mỗi dòng là một trường đã có nhãn.\nNhiệm vụ: chỉ GÁN MÃ theo danh sách hợp lệ. Không chép lại *_raw, không sửa dữ liệu khách.\n- \"Dữ liệu khách đã có\" chỉ dùng cho available_input_codes.\n- \"Đầu ra mong muốn\" dùng cho expected_output_codes. Nếu trường này không có, chỉ chọn đầu ra suy ra rõ ràng từ mục tiêu.\n- \"Tên đơn vị\" chỉ dùng để suy ra industry_codes.\n- Trường nào không có trong danh sách dưới đây nghĩa là khách để trống.\n\n- Mục tiêu: Đánh giá sinh khối và phát hiện mất rừng\n- Dữ liệu khách đã có: Ảnh viễn thám Sentinel-2 năm 2024, bản đồ ranh giới rừng\n- Địa điểm / hiện trường: Khu bảo tồn thiên nhiên Lâm Đồng\n- Tên đơn vị (chỉ dùng để suy ra ngành): Công ty TNHH Lâm Nghiệp Xanh\n- Tên dự án: Dự án Giám sát Rừng & Tín chỉ Carbon\n\nTrả về đúng một object JSON, không thêm chữ nào ngoài JSON."
+ },
+ {
+  "form": {
+   "customerName": "Nguyễn Văn abcw",
+   "companyName": "Công ty TNHH Lâm Nghiệp Xanh",
+   "contactEmail": "lamnghiep@gmail.com",
+   "contactPhone": "0912345678",
+   "projectName": "Dự án Giám sát Rừng & Tín chỉ Carbon",
+   "locationDescription": "Khu bảo tồn thiên nhiên Lâm Đồng",
+   "areaValue": "2.000 ha",
+   "monitoringFrequencyRaw": "",
+   "objectiveRaw": "",
+   "providedInputsRaw": null,
+   "expectedOutputs": "Bản đồ sinh khối\nBáo cáo MRV"
+  },
+  "ai_text": "- Đầu ra mong muốn: Bản đồ sinh khối\nBáo cáo MRV\n- Địa điểm / hiện trường: Khu bảo tồn thiên nhiên Lâm Đồng\n- Tên đơn vị (chỉ dùng để suy ra ngành): Công ty TNHH Lâm Nghiệp Xanh\n- Tên dự án: Dự án Giám sát Rừng & Tín chỉ Carbon",
+  "kw_text": "Bản đồ sinh khối\nBáo cáo MRV\nKhu bảo tồn thiên nhiên Lâm Đồng\nCông ty TNHH Lâm Nghiệp Xanh\nDự án Giám sát Rừng & Tín chỉ Carbon",
+  "sent": [
+   "expectedOutputs",
+   "locationDescription",
+   "companyName",
+   "projectName"
+  ],
+  "area_value": 2000,
+  "area_unit": "ha",
+  "area_warning": null,
+  "user_input": "Dữ liệu dưới đây do Sales nhập qua form. Mỗi dòng là một trường đã có nhãn.\nNhiệm vụ: chỉ GÁN MÃ theo danh sách hợp lệ. Không chép lại *_raw, không sửa dữ liệu khách.\n- \"Dữ liệu khách đã có\" chỉ dùng cho available_input_codes.\n- \"Đầu ra mong muốn\" dùng cho expected_output_codes. Nếu trường này không có, chỉ chọn đầu ra suy ra rõ ràng từ mục tiêu.\n- \"Tên đơn vị\" chỉ dùng để suy ra industry_codes.\n- Trường nào không có trong danh sách dưới đây nghĩa là khách để trống.\n\n- Đầu ra mong muốn: Bản đồ sinh khối\nBáo cáo MRV\n- Địa điểm / hiện trường: Khu bảo tồn thiên nhiên Lâm Đồng\n- Tên đơn vị (chỉ dùng để suy ra ngành): Công ty TNHH Lâm Nghiệp Xanh\n- Tên dự án: Dự án Giám sát Rừng & Tín chỉ Carbon\n\nTrả về đúng một object JSON, không thêm chữ nào ngoài JSON."
+ },
+ {
+  "form": {
+   "customerName": "A",
+   "contactEmail": "a@b.c",
+   "objectiveRaw": "",
+   "projectName": "",
+   "locationDescription": "",
+   "companyName": ""
+  },
+  "ai_text": "",
+  "kw_text": "",
+  "sent": [],
+  "area_value": null,
+  "area_unit": null,
+  "area_warning": null,
+  "user_input": "Dữ liệu dưới đây do Sales nhập qua form. Mỗi dòng là một trường đã có nhãn.\nNhiệm vụ: chỉ GÁN MÃ theo danh sách hợp lệ. Không chép lại *_raw, không sửa dữ liệu khách.\n- \"Dữ liệu khách đã có\" chỉ dùng cho available_input_codes.\n- \"Đầu ra mong muốn\" dùng cho expected_output_codes. Nếu trường này không có, chỉ chọn đầu ra suy ra rõ ràng từ mục tiêu.\n- \"Tên đơn vị\" chỉ dùng để suy ra industry_codes.\n- Trường nào không có trong danh sách dưới đây nghĩa là khách để trống.\n\n\n\nTrả về đúng một object JSON, không thêm chữ nào ngoài JSON."
+ },
+ {
+  "form": {
+   "customerName": "Nguyễn Văn abcw",
+   "companyName": "Công ty TNHH Lâm Nghiệp Xanh",
+   "contactEmail": "lamnghiep@gmail.com",
+   "contactPhone": "0912345678",
+   "projectName": "Dự án Giám sát Rừng & Tín chỉ Carbon",
+   "locationDescription": "Khu bảo tồn thiên nhiên Lâm Đồng",
+   "areaValue": "1,5 km2",
+   "monitoringFrequencyRaw": "",
+   "objectiveRaw": "Đánh giá sinh khối và phát hiện mất rừng",
+   "providedInputsRaw": "Ảnh viễn thám Sentinel-2 năm 2024, bản đồ ranh giới rừng",
+   "expectedOutputs": ""
+  },
+  "ai_text": "- Mục tiêu: Đánh giá sinh khối và phát hiện mất rừng\n- Dữ liệu khách đã có: Ảnh viễn thám Sentinel-2 năm 2024, bản đồ ranh giới rừng\n- Địa điểm / hiện trường: Khu bảo tồn thiên nhiên Lâm Đồng\n- Tên đơn vị (chỉ dùng để suy ra ngành): Công ty TNHH Lâm Nghiệp Xanh\n- Tên dự án: Dự án Giám sát Rừng & Tín chỉ Carbon",
+  "kw_text": "Đánh giá sinh khối và phát hiện mất rừng\nẢnh viễn thám Sentinel-2 năm 2024, bản đồ ranh giới rừng\nKhu bảo tồn thiên nhiên Lâm Đồng\nCông ty TNHH Lâm Nghiệp Xanh\nDự án Giám sát Rừng & Tín chỉ Carbon",
+  "sent": [
+   "objectiveRaw",
+   "providedInputsRaw",
+   "locationDescription",
+   "companyName",
+   "projectName"
+  ],
+  "area_value": 1.5,
+  "area_unit": "km2",
+  "area_warning": null,
+  "user_input": "Dữ liệu dưới đây do Sales nhập qua form. Mỗi dòng là một trường đã có nhãn.\nNhiệm vụ: chỉ GÁN MÃ theo danh sách hợp lệ. Không chép lại *_raw, không sửa dữ liệu khách.\n- \"Dữ liệu khách đã có\" chỉ dùng cho available_input_codes.\n- \"Đầu ra mong muốn\" dùng cho expected_output_codes. Nếu trường này không có, chỉ chọn đầu ra suy ra rõ ràng từ mục tiêu.\n- \"Tên đơn vị\" chỉ dùng để suy ra industry_codes.\n- Trường nào không có trong danh sách dưới đây nghĩa là khách để trống.\n\n- Mục tiêu: Đánh giá sinh khối và phát hiện mất rừng\n- Dữ liệu khách đã có: Ảnh viễn thám Sentinel-2 năm 2024, bản đồ ranh giới rừng\n- Địa điểm / hiện trường: Khu bảo tồn thiên nhiên Lâm Đồng\n- Tên đơn vị (chỉ dùng để suy ra ngành): Công ty TNHH Lâm Nghiệp Xanh\n- Tên dự án: Dự án Giám sát Rừng & Tín chỉ Carbon\n\nTrả về đúng một object JSON, không thêm chữ nào ngoài JSON."
+ },
+ {
+  "form": {
+   "customerName": "Nguyễn Văn abcw",
+   "companyName": "Công ty TNHH Lâm Nghiệp Xanh",
+   "contactEmail": "lamnghiep@gmail.com",
+   "contactPhone": "0912345678",
+   "projectName": "Dự án Giám sát Rừng & Tín chỉ Carbon",
+   "locationDescription": "Khu bảo tồn thiên nhiên Lâm Đồng",
+   "areaValue": 350,
+   "monitoringFrequencyRaw": "",
+   "objectiveRaw": "Đánh giá sinh khối và phát hiện mất rừng",
+   "providedInputsRaw": "Ảnh viễn thám Sentinel-2 năm 2024, bản đồ ranh giới rừng",
+   "expectedOutputs": ""
+  },
+  "ai_text": "- Mục tiêu: Đánh giá sinh khối và phát hiện mất rừng\n- Dữ liệu khách đã có: Ảnh viễn thám Sentinel-2 năm 2024, bản đồ ranh giới rừng\n- Địa điểm / hiện trường: Khu bảo tồn thiên nhiên Lâm Đồng\n- Tên đơn vị (chỉ dùng để suy ra ngành): Công ty TNHH Lâm Nghiệp Xanh\n- Tên dự án: Dự án Giám sát Rừng & Tín chỉ Carbon",
+  "kw_text": "Đánh giá sinh khối và phát hiện mất rừng\nẢnh viễn thám Sentinel-2 năm 2024, bản đồ ranh giới rừng\nKhu bảo tồn thiên nhiên Lâm Đồng\nCông ty TNHH Lâm Nghiệp Xanh\nDự án Giám sát Rừng & Tín chỉ Carbon",
+  "sent": [
+   "objectiveRaw",
+   "providedInputsRaw",
+   "locationDescription",
+   "companyName",
+   "projectName"
+  ],
+  "area_value": 350.0,
+  "area_unit": null,
+  "area_warning": "Diện tích không có đơn vị",
+  "user_input": "Dữ liệu dưới đây do Sales nhập qua form. Mỗi dòng là một trường đã có nhãn.\nNhiệm vụ: chỉ GÁN MÃ theo danh sách hợp lệ. Không chép lại *_raw, không sửa dữ liệu khách.\n- \"Dữ liệu khách đã có\" chỉ dùng cho available_input_codes.\n- \"Đầu ra mong muốn\" dùng cho expected_output_codes. Nếu trường này không có, chỉ chọn đầu ra suy ra rõ ràng từ mục tiêu.\n- \"Tên đơn vị\" chỉ dùng để suy ra industry_codes.\n- Trường nào không có trong danh sách dưới đây nghĩa là khách để trống.\n\n- Mục tiêu: Đánh giá sinh khối và phát hiện mất rừng\n- Dữ liệu khách đã có: Ảnh viễn thám Sentinel-2 năm 2024, bản đồ ranh giới rừng\n- Địa điểm / hiện trường: Khu bảo tồn thiên nhiên Lâm Đồng\n- Tên đơn vị (chỉ dùng để suy ra ngành): Công ty TNHH Lâm Nghiệp Xanh\n- Tên dự án: Dự án Giám sát Rừng & Tín chỉ Carbon\n\nTrả về đúng một object JSON, không thêm chữ nào ngoài JSON."
+ },
+ {
+  "form": {
+   "customerName": "Nguyễn Văn abcw",
+   "companyName": "Công ty TNHH Lâm Nghiệp Xanh",
+   "contactEmail": "lamnghiep@gmail.com",
+   "contactPhone": "0912345678",
+   "projectName": "Dự án Giám sát Rừng & Tín chỉ Carbon",
+   "locationDescription": "Khu bảo tồn thiên nhiên Lâm Đồng",
+   "areaValue": "khoảng vài trăm",
+   "monitoringFrequencyRaw": "",
+   "objectiveRaw": "Đánh giá sinh khối và phát hiện mất rừng",
+   "providedInputsRaw": "Ảnh viễn thám Sentinel-2 năm 2024, bản đồ ranh giới rừng",
+   "expectedOutputs": ""
+  },
+  "ai_text": "- Mục tiêu: Đánh giá sinh khối và phát hiện mất rừng\n- Dữ liệu khách đã có: Ảnh viễn thám Sentinel-2 năm 2024, bản đồ ranh giới rừng\n- Địa điểm / hiện trường: Khu bảo tồn thiên nhiên Lâm Đồng\n- Tên đơn vị (chỉ dùng để suy ra ngành): Công ty TNHH Lâm Nghiệp Xanh\n- Tên dự án: Dự án Giám sát Rừng & Tín chỉ Carbon",
+  "kw_text": "Đánh giá sinh khối và phát hiện mất rừng\nẢnh viễn thám Sentinel-2 năm 2024, bản đồ ranh giới rừng\nKhu bảo tồn thiên nhiên Lâm Đồng\nCông ty TNHH Lâm Nghiệp Xanh\nDự án Giám sát Rừng & Tín chỉ Carbon",
+  "sent": [
+   "objectiveRaw",
+   "providedInputsRaw",
+   "locationDescription",
+   "companyName",
+   "projectName"
+  ],
+  "area_value": null,
+  "area_unit": null,
+  "area_warning": "Không đọc được diện tích: 'khoảng vài trăm'",
+  "user_input": "Dữ liệu dưới đây do Sales nhập qua form. Mỗi dòng là một trường đã có nhãn.\nNhiệm vụ: chỉ GÁN MÃ theo danh sách hợp lệ. Không chép lại *_raw, không sửa dữ liệu khách.\n- \"Dữ liệu khách đã có\" chỉ dùng cho available_input_codes.\n- \"Đầu ra mong muốn\" dùng cho expected_output_codes. Nếu trường này không có, chỉ chọn đầu ra suy ra rõ ràng từ mục tiêu.\n- \"Tên đơn vị\" chỉ dùng để suy ra industry_codes.\n- Trường nào không có trong danh sách dưới đây nghĩa là khách để trống.\n\n- Mục tiêu: Đánh giá sinh khối và phát hiện mất rừng\n- Dữ liệu khách đã có: Ảnh viễn thám Sentinel-2 năm 2024, bản đồ ranh giới rừng\n- Địa điểm / hiện trường: Khu bảo tồn thiên nhiên Lâm Đồng\n- Tên đơn vị (chỉ dùng để suy ra ngành): Công ty TNHH Lâm Nghiệp Xanh\n- Tên dự án: Dự án Giám sát Rừng & Tín chỉ Carbon\n\nTrả về đúng một object JSON, không thêm chữ nào ngoài JSON."
+ }
+]

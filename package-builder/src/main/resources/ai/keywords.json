@@ -1,0 +1,527 @@
+{
+ "OBJECTIVE": {
+  "CARBON_CREDIT_MRV": [
+   "mrv",
+   "tín chỉ",
+   "tin chi",
+   "tín chỉ carbon",
+   "đăng ký tín chỉ",
+   "hồ sơ mrv",
+   "báo cáo mrv",
+   "thẩm định",
+   "verra",
+   "gold standard"
+  ],
+  "CARBON_STOCK_ASSESSMENT": [
+   "trữ lượng carbon",
+   "tru luong carbon",
+   "sinh khối",
+   "sinh khoi",
+   "hấp thụ carbon",
+   "agb",
+   "biomass",
+   "trữ lượng các-bon"
+  ],
+  "GHG_EMISSION_MEASUREMENT": [
+   "đo phát thải",
+   "do phat thai",
+   "đo khí thải",
+   "khí nhà kính",
+   "khi nha kinh",
+   "nồng độ ch4",
+   "methane",
+   "ch4",
+   "co2",
+   "đo phát thải khí"
+  ],
+  "EMISSION_REDUCTION_VERIFICATION": [
+   "giảm phát thải",
+   "giam phat thai",
+   "trước sau",
+   "truoc sau",
+   "hiệu quả giảm",
+   "xác nhận giảm",
+   "before after"
+  ],
+  "GHG_INVENTORY_SUPPORT": [
+   "kiểm kê",
+   "kiem ke",
+   "kiểm kê khí nhà kính",
+   "inventory",
+   "kiểm kê phát thải"
+  ],
+  "CARBON_FOOTPRINT_MAPPING": [
+   "carbon footprint",
+   "dấu chân carbon",
+   "bản đồ carbon",
+   "ban do carbon"
+  ],
+  "ESG_NETZERO": [
+   "esg",
+   "net zero",
+   "netzero",
+   "trung hòa carbon",
+   "phát triển bền vững"
+  ],
+  "CLIMATE_RESEARCH": [
+   "nghiên cứu khí hậu",
+   "nghien cuu khi hau",
+   "biến đổi khí hậu",
+   "vi khí hậu",
+   "albedo",
+   "phản xạ",
+   "đảo nhiệt"
+  ],
+  "DROUGHT_WATER_STRESS": [
+   "hạn hán",
+   "han han",
+   "khô hạn",
+   "độ ẩm đất",
+   "do am dat",
+   "thiếu nước",
+   "tưới",
+   "stress nước",
+   "cảnh báo hạn"
+  ],
+  "FIRE_RISK_PREVENTION": [
+   "cháy",
+   "chay",
+   "pccc",
+   "nguy cơ cháy",
+   "phòng cháy",
+   "hỏa hoạn"
+  ],
+  "VEGETATION_CHANGE_MONITORING": [
+   "thảm thực vật",
+   "tham thuc vat",
+   "biến động rừng",
+   "mất rừng",
+   "tái sinh",
+   "ndvi",
+   "theo dõi rừng",
+   "phục hồi rừng"
+  ],
+  "STRUCTURAL_INSPECTION": [
+   "kết cấu",
+   "ket cau",
+   "công trình cũ",
+   "nứt",
+   "xuống cấp",
+   "kiểm định công trình",
+   "nhà xưởng cũ",
+   "lidar công trình"
+  ]
+ },
+ "ENVIRONMENT": {
+  "FOREST": [
+   "rừng",
+   "rung",
+   "lâm phận",
+   "tiểu khu",
+   "rừng trồng",
+   "rừng tự nhiên",
+   "khu bảo tồn"
+  ],
+  "RICE_FIELD": [
+   "ruộng lúa",
+   "ruong lua",
+   "lúa",
+   "cánh đồng lúa",
+   "awd",
+   "ngập khô xen kẽ"
+  ],
+  "CROPLAND": [
+   "đất canh tác",
+   "trang trại",
+   "nông trại",
+   "vùng trồng",
+   "cà phê",
+   "cây trồng",
+   "hoa màu"
+  ],
+  "LANDFILL": [
+   "bãi rác",
+   "bai rac",
+   "bãi chôn lấp",
+   "chôn lấp",
+   "chất thải rắn"
+  ],
+  "INDUSTRIAL_SITE": [
+   "nhà máy",
+   "nha may",
+   "khu công nghiệp",
+   "kcn",
+   "nhà xưởng",
+   "cơ sở sản xuất"
+  ],
+  "URBAN_AREA": [
+   "đô thị",
+   "do thi",
+   "thành phố",
+   "khu dân cư",
+   "phường",
+   "quận"
+  ],
+  "BUILDING": [
+   "tòa nhà",
+   "toa nha",
+   "chung cư",
+   "công trình",
+   "kho bãi",
+   "nhà kho"
+  ],
+  "MIXED_LAND_COVER": [
+   "nhiều loại bề mặt",
+   "lớp phủ",
+   "land cover"
+  ]
+ },
+ "INDUSTRY": {
+  "FORESTRY": [
+   "lâm nghiệp",
+   "lam nghiep",
+   "chủ rừng",
+   "công ty lâm nghiệp",
+   "ban quản lý rừng"
+  ],
+  "CONSERVATION": [
+   "khu bảo tồn",
+   "rừng đặc dụng",
+   "rừng phòng hộ",
+   "vườn quốc gia"
+  ],
+  "AGRICULTURE": [
+   "nông nghiệp",
+   "nong nghiep",
+   "hợp tác xã",
+   "htx",
+   "nông dân",
+   "trang trại"
+  ],
+  "WASTE_MANAGEMENT": [
+   "môi trường đô thị",
+   "urenco",
+   "xử lý chất thải",
+   "bãi rác",
+   "công ty môi trường"
+  ],
+  "INDUSTRIAL_MANUFACTURING": [
+   "nhà máy",
+   "khu công nghiệp",
+   "sản xuất",
+   "nhà xưởng"
+  ],
+  "ENERGY_HEAVY_INDUSTRY": [
+   "nhiệt điện",
+   "xi măng",
+   "sắt thép",
+   "dầu khí",
+   "năng lượng"
+  ],
+  "GOVERNMENT_AGENCY": [
+   "sở",
+   "ubnd",
+   "cơ quan quản lý",
+   "chính quyền",
+   "nhà nước",
+   "chi cục"
+  ],
+  "RESEARCH_ACADEMIA": [
+   "viện",
+   "trường đại học",
+   "nghiên cứu",
+   "nhóm nghiên cứu",
+   "đại học"
+  ],
+  "CARBON_PROJECT_DEVELOPER": [
+   "chủ dự án",
+   "phát triển dự án",
+   "tư vấn mrv",
+   "đơn vị phát triển",
+   "dự án carbon"
+  ],
+  "CARBON_INVESTOR": [
+   "quỹ",
+   "nhà đầu tư",
+   "mua tín chỉ"
+  ],
+  "CORPORATE_ESG": [
+   "doanh nghiệp",
+   "tập đoàn",
+   "công ty",
+   "cam kết esg"
+  ],
+  "FIRE_SAFETY_AUTHORITY": [
+   "pccc",
+   "cảnh sát phòng cháy",
+   "công an",
+   "cứu hỏa"
+  ],
+  "REAL_ESTATE_BUILDING": [
+   "quản lý tòa nhà",
+   "chung cư",
+   "bất động sản",
+   "ban quản trị"
+  ]
+ },
+ "TOPIC": {
+  "carbon": [
+   "carbon",
+   "các-bon"
+  ],
+  "ghg": [
+   "khí nhà kính",
+   "ghg"
+  ],
+  "co2": [
+   "co2",
+   "co₂",
+   "carbon dioxide"
+  ],
+  "methane": [
+   "methane",
+   "ch4",
+   "ch₄",
+   "mê-tan"
+  ],
+  "mrv": [
+   "mrv"
+  ],
+  "biomass": [
+   "sinh khối",
+   "biomass",
+   "agb"
+  ],
+  "forest": [
+   "rừng"
+  ],
+  "rice": [
+   "lúa",
+   "ruộng"
+  ],
+  "landfill": [
+   "bãi rác",
+   "chôn lấp"
+  ],
+  "urban": [
+   "đô thị",
+   "thành phố"
+  ],
+  "industrial": [
+   "nhà máy",
+   "khu công nghiệp"
+  ],
+  "drought": [
+   "hạn hán",
+   "khô hạn"
+  ],
+  "soil-moisture": [
+   "độ ẩm đất"
+  ],
+  "canopy-moisture": [
+   "độ ẩm tán"
+  ],
+  "fire-risk": [
+   "nguy cơ cháy",
+   "pccc",
+   "cháy"
+  ],
+  "albedo": [
+   "albedo",
+   "phản xạ"
+  ],
+  "climate-research": [
+   "nghiên cứu khí hậu"
+  ],
+  "vegetation": [
+   "thảm thực vật",
+   "ndvi",
+   "thực vật"
+  ],
+  "building": [
+   "tòa nhà",
+   "công trình"
+  ],
+  "esg": [
+   "esg",
+   "net zero"
+  ],
+  "lidar": [
+   "lidar"
+  ],
+  "multispectral": [
+   "đa phổ",
+   "multispectral"
+  ],
+  "thermal": [
+   "ảnh nhiệt",
+   "camera nhiệt",
+   "nhiệt"
+  ],
+  "gas-sensor": [
+   "cảm biến khí"
+  ],
+  "rgb": [
+   "rgb",
+   "ảnh màu"
+  ]
+ },
+ "EXPECTED_OUTPUT": {
+  "MRV_REPORT": [
+   "báo cáo mrv",
+   "hồ sơ mrv"
+  ],
+  "MONITORING_PLAN": [
+   "kế hoạch giám sát"
+  ],
+  "AGB_CARBON_STOCK_MAP": [
+   "bản đồ trữ lượng",
+   "bản đồ carbon rừng",
+   "bản đồ agb",
+   "trữ lượng các-bon"
+  ],
+  "EMISSION_SOURCE_MAP": [
+   "bản đồ nguồn phát thải",
+   "carbon source map"
+  ],
+  "GAS_CONCENTRATION_MAP": [
+   "bản đồ nồng độ",
+   "bản đồ khí"
+  ],
+  "EMISSION_HOTSPOTS": [
+   "điểm nóng",
+   "hotspot",
+   "điểm rò rỉ"
+  ],
+  "EMISSION_FLUX": [
+   "thông lượng",
+   "flux"
+  ],
+  "EMISSION_REDUCTION_RESULT": [
+   "so sánh trước sau",
+   "lượng giảm phát thải"
+  ],
+  "SEASONAL_CH4_EMISSION": [
+   "phát thải mùa vụ",
+   "kg ch4/ha"
+  ],
+  "SOIL_MOISTURE_MAP": [
+   "bản đồ độ ẩm đất"
+  ],
+  "DROUGHT_ZONE_MAP": [
+   "bản đồ khô hạn",
+   "phân vùng khô hạn"
+  ],
+  "DROUGHT_FORECAST": [
+   "dự báo hạn"
+  ],
+  "FIRE_RISK_MAP": [
+   "bản đồ nguy cơ cháy"
+  ],
+  "CANOPY_MOISTURE_MAP": [
+   "bản đồ độ ẩm tán",
+   "fmc"
+  ],
+  "VEGETATION_INDEX_MAP": [
+   "bản đồ chỉ số thực vật",
+   "ndvi"
+  ],
+  "CHANGE_MAP": [
+   "bản đồ biến động",
+   "change map"
+  ],
+  "ORTHOMOSAIC": [
+   "ảnh trực giao",
+   "orthomosaic"
+  ],
+  "POINT_CLOUD": [
+   "đám mây điểm",
+   "point cloud"
+  ],
+  "CONDITION_REPORT": [
+   "báo cáo hiện trạng",
+   "đánh giá hiện trạng"
+  ],
+  "DEFECT_TABLE": [
+   "bảng khuyết tật",
+   "bảng chỉ tiêu hình học"
+  ],
+  "TECHNICAL_REPORT": [
+   "báo cáo kỹ thuật"
+  ],
+  "GIS_LAYER": [
+   "lớp gis",
+   "dữ liệu gis",
+   "shapefile"
+  ],
+  "DASHBOARD": [
+   "dashboard",
+   "webgis"
+  ],
+  "PRIORITY_INSPECTION_LIST": [
+   "danh sách ưu tiên kiểm tra",
+   "khu vực cần kiểm tra"
+  ],
+  "CO2E_TABLE": [
+   "bảng co2e",
+   "quy đổi tco2e"
+  ],
+  "MONITORING_NETWORK_ASSESSMENT": [
+   "đánh giá mạng quan trắc"
+  ]
+ },
+ "AVAILABLE_INPUT": {
+  "AOI_BOUNDARY": [
+   "ranh giới",
+   "kml",
+   "shapefile ranh giới",
+   "bản đồ ranh giới"
+  ],
+  "DEM": [
+   "mô hình số độ cao",
+   "dem"
+  ],
+  "LFG_SYSTEM_LAYOUT": [
+   "sơ đồ giếng thu",
+   "giếng thu khí",
+   "đường ống gom"
+  ],
+  "FOREST_PLOT_DATA": [
+   "ô tiêu chuẩn",
+   "ô mẫu",
+   "otc"
+  ],
+  "FOREST_INVENTORY_PREVIOUS": [
+   "kiểm kê rừng kỳ trước",
+   "số liệu kiểm kê rừng"
+  ],
+  "ACTIVITY_DATA": [
+   "dữ liệu hoạt động",
+   "số liệu điện",
+   "tiêu thụ nhiên liệu"
+  ],
+  "GHG_INVENTORY": [
+   "báo cáo kiểm kê"
+  ],
+  "CROP_CALENDAR": [
+   "lịch mùa vụ"
+  ],
+  "WATER_REGIME": [
+   "chế độ nước",
+   "awd"
+  ],
+  "AS_BUILT_DRAWINGS": [
+   "hồ sơ hoàn công",
+   "bản vẽ"
+  ],
+  "BASEMAP_GIS": [
+   "bản đồ nền",
+   "lớp gis nền",
+   "land use"
+  ],
+  "WEATHER_DATA": [
+   "dữ liệu khí tượng",
+   "số liệu thời tiết"
+  ]
+ }
+}

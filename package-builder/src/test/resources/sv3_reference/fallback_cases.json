@@ -1,0 +1,753 @@
+[
+ {
+  "id": "T01",
+  "text": "Bên mình quản lý 2.000 ha rừng trồng, muốn đánh giá trữ lượng carbon và chuẩn bị hồ sơ MRV để đăng ký tín chỉ.",
+  "result": {
+   "objective_codes": [
+    "CARBON_CREDIT_MRV",
+    "CARBON_STOCK_ASSESSMENT"
+   ],
+   "environment_codes": [
+    "FOREST",
+    "URBAN_AREA"
+   ],
+   "industry_codes": [
+    "GOVERNMENT_AGENCY"
+   ],
+   "topic_codes": [
+    "carbon",
+    "mrv",
+    "forest"
+   ],
+   "expected_output_codes": [
+    "MRV_REPORT"
+   ],
+   "available_input_codes": [],
+   "area_value": 2000.0,
+   "area_unit": "ha"
+  }
+ },
+ {
+  "id": "T02",
+  "text": "Hợp tác xã tụi em trồng lúa 50 ha, muốn đo phát thải methane theo mùa vụ để so sánh khi áp dụng tưới ngập khô xen kẽ.",
+  "result": {
+   "objective_codes": [
+    "GHG_EMISSION_MEASUREMENT",
+    "DROUGHT_WATER_STRESS"
+   ],
+   "environment_codes": [
+    "RICE_FIELD"
+   ],
+   "industry_codes": [
+    "AGRICULTURE",
+    "GOVERNMENT_AGENCY"
+   ],
+   "topic_codes": [
+    "methane",
+    "rice"
+   ],
+   "expected_output_codes": [],
+   "available_input_codes": [],
+   "area_value": 50.0,
+   "area_unit": "ha"
+  }
+ },
+ {
+  "id": "T03",
+  "text": "Công ty môi trường đô thị cần khảo sát phát thải methane bề mặt tại bãi chôn lấp và xác định điểm rò rỉ để xử lý.",
+  "result": {
+   "objective_codes": [
+    "GHG_EMISSION_MEASUREMENT"
+   ],
+   "environment_codes": [
+    "LANDFILL",
+    "URBAN_AREA"
+   ],
+   "industry_codes": [
+    "WASTE_MANAGEMENT",
+    "CORPORATE_ESG"
+   ],
+   "topic_codes": [
+    "methane",
+    "rice",
+    "landfill",
+    "urban"
+   ],
+   "expected_output_codes": [
+    "EMISSION_HOTSPOTS"
+   ],
+   "available_input_codes": [],
+   "area_value": null,
+   "area_unit": null
+  }
+ },
+ {
+  "id": "T04",
+  "text": "Khu công nghiệp của chúng tôi muốn lập bản đồ carbon footprint cho toàn bộ nhà máy, phục vụ báo cáo ESG.",
+  "result": {
+   "objective_codes": [
+    "CARBON_FOOTPRINT_MAPPING",
+    "ESG_NETZERO"
+   ],
+   "environment_codes": [
+    "INDUSTRIAL_SITE"
+   ],
+   "industry_codes": [
+    "INDUSTRIAL_MANUFACTURING"
+   ],
+   "topic_codes": [
+    "carbon",
+    "industrial",
+    "esg"
+   ],
+   "expected_output_codes": [],
+   "available_input_codes": [],
+   "area_value": null,
+   "area_unit": null
+  }
+ },
+ {
+  "id": "T05",
+  "text": "Sở tài nguyên môi trường cần theo dõi khí nhà kính ở khu đô thị, xác định khu vực nồng độ cao.",
+  "result": {
+   "objective_codes": [
+    "GHG_EMISSION_MEASUREMENT"
+   ],
+   "environment_codes": [
+    "URBAN_AREA"
+   ],
+   "industry_codes": [
+    "GOVERNMENT_AGENCY"
+   ],
+   "topic_codes": [
+    "ghg",
+    "rice",
+    "urban"
+   ],
+   "expected_output_codes": [],
+   "available_input_codes": [],
+   "area_value": null,
+   "area_unit": null
+  }
+ },
+ {
+  "id": "T06",
+  "text": "Ban quản lý rừng phòng hộ muốn đo độ ẩm tán rừng để đánh giá nguy cơ cháy trong mùa khô.",
+  "result": {
+   "objective_codes": [
+    "FIRE_RISK_PREVENTION"
+   ],
+   "environment_codes": [
+    "FOREST",
+    "URBAN_AREA"
+   ],
+   "industry_codes": [
+    "FORESTRY",
+    "CONSERVATION"
+   ],
+   "topic_codes": [
+    "forest",
+    "canopy-moisture",
+    "fire-risk"
+   ],
+   "expected_output_codes": [],
+   "available_input_codes": [],
+   "area_value": null,
+   "area_unit": null
+  }
+ },
+ {
+  "id": "T07",
+  "text": "Cảnh sát PCCC quận cần bản đồ phân vùng khô hạn trong khu dân cư để ưu tiên kiểm tra.",
+  "result": {
+   "objective_codes": [
+    "DROUGHT_WATER_STRESS",
+    "FIRE_RISK_PREVENTION"
+   ],
+   "environment_codes": [
+    "URBAN_AREA"
+   ],
+   "industry_codes": [
+    "FIRE_SAFETY_AUTHORITY"
+   ],
+   "topic_codes": [
+    "drought",
+    "fire-risk"
+   ],
+   "expected_output_codes": [
+    "DROUGHT_ZONE_MAP"
+   ],
+   "available_input_codes": [],
+   "area_value": null,
+   "area_unit": null
+  }
+ },
+ {
+  "id": "T08",
+  "text": "Doanh nghiệp trồng rừng nguyên liệu muốn theo dõi biến động thảm thực vật qua các kỳ, có số liệu NDVI.",
+  "result": {
+   "objective_codes": [
+    "VEGETATION_CHANGE_MONITORING"
+   ],
+   "environment_codes": [
+    "FOREST"
+   ],
+   "industry_codes": [
+    "GOVERNMENT_AGENCY",
+    "CORPORATE_ESG"
+   ],
+   "topic_codes": [
+    "forest",
+    "vegetation"
+   ],
+   "expected_output_codes": [
+    "VEGETATION_INDEX_MAP"
+   ],
+   "available_input_codes": [],
+   "area_value": null,
+   "area_unit": null
+  }
+ },
+ {
+  "id": "T09",
+  "text": "Bên em quản lý chung cư cũ, muốn kiểm tra kết cấu xuống cấp và đánh giá nguy cơ cháy do vật liệu lão hóa.",
+  "result": {
+   "objective_codes": [
+    "FIRE_RISK_PREVENTION",
+    "STRUCTURAL_INSPECTION"
+   ],
+   "environment_codes": [
+    "URBAN_AREA",
+    "BUILDING"
+   ],
+   "industry_codes": [
+    "REAL_ESTATE_BUILDING"
+   ],
+   "topic_codes": [
+    "fire-risk"
+   ],
+   "expected_output_codes": [],
+   "available_input_codes": [],
+   "area_value": null,
+   "area_unit": null
+  }
+ },
+ {
+  "id": "T10",
+  "text": "Viện nghiên cứu khí hậu cần dữ liệu albedo bề mặt cho khu vực đô thị để nghiên cứu đảo nhiệt.",
+  "result": {
+   "objective_codes": [
+    "CLIMATE_RESEARCH"
+   ],
+   "environment_codes": [
+    "URBAN_AREA"
+   ],
+   "industry_codes": [
+    "RESEARCH_ACADEMIA"
+   ],
+   "topic_codes": [
+    "urban",
+    "albedo",
+    "climate-research",
+    "thermal"
+   ],
+   "expected_output_codes": [],
+   "available_input_codes": [],
+   "area_value": null,
+   "area_unit": null
+  }
+ },
+ {
+  "id": "T11",
+  "text": "Trang trại cà phê 300 ha đang bị khô hạn, muốn có bản đồ độ ẩm đất và dự báo hạn vài tuần tới.",
+  "result": {
+   "objective_codes": [
+    "DROUGHT_WATER_STRESS"
+   ],
+   "environment_codes": [
+    "CROPLAND"
+   ],
+   "industry_codes": [
+    "AGRICULTURE"
+   ],
+   "topic_codes": [
+    "drought",
+    "soil-moisture"
+   ],
+   "expected_output_codes": [
+    "SOIL_MOISTURE_MAP",
+    "DROUGHT_FORECAST"
+   ],
+   "available_input_codes": [],
+   "area_value": 300.0,
+   "area_unit": "ha"
+  }
+ },
+ {
+  "id": "T12",
+  "text": "Chủ dự án carbon cần đơn vị lập báo cáo MRV cho kỳ giám sát, dự án bên mình là trồng rừng.",
+  "result": {
+   "objective_codes": [
+    "CARBON_CREDIT_MRV"
+   ],
+   "environment_codes": [
+    "FOREST"
+   ],
+   "industry_codes": [
+    "CARBON_PROJECT_DEVELOPER"
+   ],
+   "topic_codes": [
+    "carbon",
+    "mrv",
+    "forest"
+   ],
+   "expected_output_codes": [
+    "MRV_REPORT"
+   ],
+   "available_input_codes": [],
+   "area_value": null,
+   "area_unit": null
+  }
+ },
+ {
+  "id": "T13",
+  "text": "Nhà máy xi măng cần kiểm kê khí nhà kính và xác nhận mức giảm phát thải sau khi cải tạo dây chuyền.",
+  "result": {
+   "objective_codes": [
+    "GHG_EMISSION_MEASUREMENT",
+    "EMISSION_REDUCTION_VERIFICATION",
+    "GHG_INVENTORY_SUPPORT"
+   ],
+   "environment_codes": [
+    "INDUSTRIAL_SITE"
+   ],
+   "industry_codes": [
+    "INDUSTRIAL_MANUFACTURING",
+    "ENERGY_HEAVY_INDUSTRY"
+   ],
+   "topic_codes": [
+    "ghg",
+    "industrial"
+   ],
+   "expected_output_codes": [],
+   "available_input_codes": [],
+   "area_value": null,
+   "area_unit": null
+  }
+ },
+ {
+  "id": "T14",
+  "text": "Chỗ mình cần đo khí thải, xem thế nào.",
+  "result": {
+   "objective_codes": [
+    "GHG_EMISSION_MEASUREMENT"
+   ],
+   "environment_codes": [],
+   "industry_codes": [],
+   "topic_codes": [],
+   "expected_output_codes": [],
+   "available_input_codes": [],
+   "area_value": null,
+   "area_unit": null
+  }
+ },
+ {
+  "id": "T15",
+  "text": "Công ty lâm nghiệp có sẵn số liệu ô tiêu chuẩn và kiểm kê rừng kỳ trước, muốn lập bản đồ trữ lượng carbon.",
+  "result": {
+   "objective_codes": [
+    "CARBON_STOCK_ASSESSMENT",
+    "GHG_INVENTORY_SUPPORT"
+   ],
+   "environment_codes": [
+    "FOREST"
+   ],
+   "industry_codes": [
+    "FORESTRY",
+    "GOVERNMENT_AGENCY",
+    "CORPORATE_ESG"
+   ],
+   "topic_codes": [
+    "carbon",
+    "forest"
+   ],
+   "expected_output_codes": [
+    "AGB_CARBON_STOCK_MAP"
+   ],
+   "available_input_codes": [
+    "FOREST_PLOT_DATA",
+    "FOREST_INVENTORY_PREVIOUS"
+   ],
+   "area_value": null,
+   "area_unit": null
+  }
+ },
+ {
+  "id": "T16",
+  "text": "Khu bảo tồn muốn theo dõi phục hồi rừng sau cháy, 1.200 ha, cần bản đồ biến động giữa hai kỳ.",
+  "result": {
+   "objective_codes": [
+    "FIRE_RISK_PREVENTION",
+    "VEGETATION_CHANGE_MONITORING"
+   ],
+   "environment_codes": [
+    "FOREST"
+   ],
+   "industry_codes": [
+    "CONSERVATION"
+   ],
+   "topic_codes": [
+    "forest",
+    "fire-risk"
+   ],
+   "expected_output_codes": [
+    "CHANGE_MAP"
+   ],
+   "available_input_codes": [],
+   "area_value": 1200.0,
+   "area_unit": "ha"
+  }
+ },
+ {
+  "id": "T17",
+  "text": "Quỹ đầu tư đang xem xét mua tín chỉ, cần rà soát báo cáo MRV do bên khác lập.",
+  "result": {
+   "objective_codes": [
+    "CARBON_CREDIT_MRV"
+   ],
+   "environment_codes": [],
+   "industry_codes": [
+    "GOVERNMENT_AGENCY",
+    "CARBON_INVESTOR"
+   ],
+   "topic_codes": [
+    "mrv"
+   ],
+   "expected_output_codes": [
+    "MRV_REPORT"
+   ],
+   "available_input_codes": [],
+   "area_value": null,
+   "area_unit": null
+  }
+ },
+ {
+  "id": "T18",
+  "text": "Bên mình vận hành bãi rác, đã lắp hệ thống thu khí, muốn xác nhận lượng phát thải giảm được sau khi lắp.",
+  "result": {
+   "objective_codes": [],
+   "environment_codes": [
+    "LANDFILL"
+   ],
+   "industry_codes": [
+    "WASTE_MANAGEMENT"
+   ],
+   "topic_codes": [
+    "landfill"
+   ],
+   "expected_output_codes": [],
+   "available_input_codes": [],
+   "area_value": null,
+   "area_unit": null
+  }
+ },
+ {
+  "id": "T19",
+  "text": "Cần khảo sát 15 km tuyến đê, chụp ảnh nhiệt xem có bất thường không.",
+  "result": {
+   "objective_codes": [],
+   "environment_codes": [],
+   "industry_codes": [],
+   "topic_codes": [
+    "thermal"
+   ],
+   "expected_output_codes": [],
+   "available_input_codes": [],
+   "area_value": 15.0,
+   "area_unit": "km"
+  }
+ },
+ {
+  "id": "T20",
+  "text": "Doanh nghiệp cam kết net zero, muốn biết chi phí đo carbon toàn bộ nhà máy hết bao nhiêu.",
+  "result": {
+   "objective_codes": [
+    "ESG_NETZERO"
+   ],
+   "environment_codes": [
+    "INDUSTRIAL_SITE"
+   ],
+   "industry_codes": [
+    "INDUSTRIAL_MANUFACTURING",
+    "CORPORATE_ESG"
+   ],
+   "topic_codes": [
+    "carbon",
+    "industrial",
+    "esg"
+   ],
+   "expected_output_codes": [],
+   "available_input_codes": [],
+   "area_value": null,
+   "area_unit": null
+  }
+ },
+ {
+  "id": "T21",
+  "text": "Vườn quốc gia muốn bay drone đo độ ẩm lá cây trên 800 ha để cảnh báo sớm nguy cơ cháy rừng mùa khô.",
+  "result": {
+   "objective_codes": [
+    "FIRE_RISK_PREVENTION"
+   ],
+   "environment_codes": [
+    "FOREST"
+   ],
+   "industry_codes": [
+    "CONSERVATION",
+    "GOVERNMENT_AGENCY"
+   ],
+   "topic_codes": [
+    "forest",
+    "fire-risk"
+   ],
+   "expected_output_codes": [],
+   "available_input_codes": [],
+   "area_value": 800.0,
+   "area_unit": "ha"
+  }
+ },
+ {
+  "id": "T22",
+  "text": "Bãi chôn lấp của công ty môi trường tỉnh vừa lắp hệ thống đốt khí flare, cần đo lại để chứng minh lượng methane giảm được so với năm ngoái.",
+  "result": {
+   "objective_codes": [
+    "GHG_EMISSION_MEASUREMENT"
+   ],
+   "environment_codes": [
+    "LANDFILL"
+   ],
+   "industry_codes": [
+    "WASTE_MANAGEMENT",
+    "GOVERNMENT_AGENCY",
+    "CORPORATE_ESG"
+   ],
+   "topic_codes": [
+    "methane",
+    "rice",
+    "landfill"
+   ],
+   "expected_output_codes": [],
+   "available_input_codes": [],
+   "area_value": null,
+   "area_unit": null
+  }
+ },
+ {
+  "id": "T23",
+  "text": "Tập đoàn thực phẩm đặt mục tiêu trung hòa carbon năm 2035, muốn lập bản đồ nguồn phát thải cho 3 nhà máy chế biến.",
+  "result": {
+   "objective_codes": [
+    "ESG_NETZERO"
+   ],
+   "environment_codes": [
+    "FOREST",
+    "INDUSTRIAL_SITE"
+   ],
+   "industry_codes": [
+    "INDUSTRIAL_MANUFACTURING",
+    "CORPORATE_ESG"
+   ],
+   "topic_codes": [
+    "carbon",
+    "forest",
+    "industrial"
+   ],
+   "expected_output_codes": [
+    "EMISSION_SOURCE_MAP"
+   ],
+   "available_input_codes": [],
+   "area_value": null,
+   "area_unit": null
+  }
+ },
+ {
+  "id": "T24",
+  "text": "Bên mình là chủ dự án carbon rừng ngập mặn, đơn vị thẩm định yêu cầu chỉnh lại kế hoạch giám sát và trả lời các phát hiện của họ.",
+  "result": {
+   "objective_codes": [
+    "CARBON_CREDIT_MRV"
+   ],
+   "environment_codes": [
+    "FOREST"
+   ],
+   "industry_codes": [
+    "CARBON_PROJECT_DEVELOPER"
+   ],
+   "topic_codes": [
+    "carbon",
+    "forest"
+   ],
+   "expected_output_codes": [
+    "MONITORING_PLAN"
+   ],
+   "available_input_codes": [],
+   "area_value": null,
+   "area_unit": null
+  }
+ },
+ {
+  "id": "T25",
+  "text": "HTX lúa ở An Giang áp dụng AWD trên 120 ha, cần báo cáo so sánh phát thải giữa ruộng AWD và ruộng tưới ngập truyền thống.",
+  "result": {
+   "objective_codes": [
+    "DROUGHT_WATER_STRESS"
+   ],
+   "environment_codes": [
+    "RICE_FIELD"
+   ],
+   "industry_codes": [
+    "AGRICULTURE",
+    "GOVERNMENT_AGENCY"
+   ],
+   "topic_codes": [
+    "rice"
+   ],
+   "expected_output_codes": [],
+   "available_input_codes": [
+    "WATER_REGIME"
+   ],
+   "area_value": 120.0,
+   "area_unit": "ha"
+  }
+ },
+ {
+  "id": "T26",
+  "text": "Sở Giao thông cần quét LiDAR cây cầu dài 2 km để kiểm tra vết nứt ở dầm.",
+  "result": {
+   "objective_codes": [
+    "STRUCTURAL_INSPECTION"
+   ],
+   "environment_codes": [],
+   "industry_codes": [
+    "GOVERNMENT_AGENCY"
+   ],
+   "topic_codes": [
+    "lidar"
+   ],
+   "expected_output_codes": [],
+   "available_input_codes": [],
+   "area_value": 2.0,
+   "area_unit": "km"
+  }
+ },
+ {
+  "id": "T27",
+  "text": "ben em co trang trai sau rieng 40ha, mua nay lo bi han, can ban do do am dat de biet cho nao thieu nuoc",
+  "result": {
+   "objective_codes": [
+    "DROUGHT_WATER_STRESS"
+   ],
+   "environment_codes": [
+    "CROPLAND"
+   ],
+   "industry_codes": [
+    "AGRICULTURE"
+   ],
+   "topic_codes": [],
+   "expected_output_codes": [],
+   "available_input_codes": [],
+   "area_value": 40.0,
+   "area_unit": "ha"
+  }
+ },
+ {
+  "id": "T28",
+  "text": "Báo giá giúp mình gói đo carbon cho rừng keo nhà mình, khoảng 30 hecta.",
+  "result": {
+   "objective_codes": [],
+   "environment_codes": [
+    "FOREST"
+   ],
+   "industry_codes": [],
+   "topic_codes": [
+    "carbon",
+    "forest"
+   ],
+   "expected_output_codes": [],
+   "available_input_codes": [],
+   "area_value": 30.0,
+   "area_unit": "ha"
+  }
+ },
+ {
+  "id": "T29",
+  "text": "Team mình cần đếm số xe tải ra vào cảng mỗi ngày bằng drone, có dashboard realtime để theo dõi.",
+  "result": {
+   "objective_codes": [],
+   "environment_codes": [],
+   "industry_codes": [
+    "GOVERNMENT_AGENCY"
+   ],
+   "topic_codes": [],
+   "expected_output_codes": [
+    "DASHBOARD"
+   ],
+   "available_input_codes": [],
+   "area_value": null,
+   "area_unit": null
+  }
+ },
+ {
+  "id": "T30",
+  "text": "Mùa khô năm nào khu chung cư cũ bên mình cũng lo cháy, muốn biết tòa nào nguy hiểm nhất để ưu tiên sửa trước.",
+  "result": {
+   "objective_codes": [
+    "FIRE_RISK_PREVENTION"
+   ],
+   "environment_codes": [
+    "BUILDING"
+   ],
+   "industry_codes": [
+    "REAL_ESTATE_BUILDING"
+   ],
+   "topic_codes": [
+    "fire-risk"
+   ],
+   "expected_output_codes": [],
+   "available_input_codes": [],
+   "area_value": null,
+   "area_unit": null
+  }
+ },
+ {
+  "id": "FORM_EXAMPLE",
+  "text": "Đánh giá sinh khối và phát hiện mất rừng\nẢnh viễn thám Sentinel-2 năm 2024, bản đồ ranh giới rừng\nKhu bảo tồn thiên nhiên Lâm Đồng\nCông ty TNHH Lâm Nghiệp Xanh\nDự án Giám sát Rừng & Tín chỉ Carbon",
+  "result": {
+   "objective_codes": [
+    "CARBON_CREDIT_MRV",
+    "CARBON_STOCK_ASSESSMENT",
+    "VEGETATION_CHANGE_MONITORING"
+   ],
+   "environment_codes": [
+    "FOREST"
+   ],
+   "industry_codes": [
+    "FORESTRY",
+    "CONSERVATION",
+    "RESEARCH_ACADEMIA",
+    "CORPORATE_ESG"
+   ],
+   "topic_codes": [
+    "carbon",
+    "biomass",
+    "forest"
+   ],
+   "expected_output_codes": [],
+   "available_input_codes": [
+    "AOI_BOUNDARY"
+   ],
+   "area_value": null,
+   "area_unit": null
+  }
+ }
+]

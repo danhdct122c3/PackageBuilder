@@ -1,0 +1,56 @@
+{
+  "version": "D4 v1 · 28/09/2026",
+  "note": "Cấu hình chấm điểm cho Recommendation Engine. Đổi số trong file này thì không phải build lại code.",
+  "score_scale": {
+    "mode": "RAW_0_100",
+    "note": "Mỗi *_score là điểm thô 0-100 của riêng tín hiệu đó. Trọng số chỉ dùng khi tính match_score."
+  },
+  "weights": {
+    "objective": 35,
+    "expected_output": 25,
+    "environment": 20,
+    "industry": 12,
+    "topic": 8
+  },
+  "signal_to_column": {
+    "objective": "objective_score",
+    "expected_output": "output_score",
+    "environment": "use_case_score",
+    "industry": "industry_score",
+    "topic": "tag_score"
+  },
+  "match_points": {
+    "exact": 100,
+    "via_parent_tag": 60,
+    "same_output_family": 70,
+    "none": 0
+  },
+  "coverage": {
+    "formula": "score = tổng điểm khớp của từng mã khách nêu / số mã khách nêu",
+    "note": "Khách nêu 2 mục tiêu, service đáp ứng 1 mã khớp đủ và 1 mã không khớp thì objective_score = (100 + 0) / 2 = 50."
+  },
+  "missing_signal": {
+    "policy": "REDISTRIBUTE",
+    "note": "Tín hiệu nào khách không cung cấp dữ liệu thì bỏ khỏi phép tính và chia lại trọng số cho các tín hiệu còn lại. Không chấm 0, vì 0 sẽ kéo tụt mọi service như nhau và làm sai thứ tự."
+  },
+  "match_score": {
+    "formula": "match_score = tổng(trọng số × điểm tín hiệu) / tổng(trọng số của các tín hiệu có dữ liệu)",
+    "rounding": 2
+  },
+  "display": {
+    "min_match_score": 40,
+    "max_results": 8,
+    "rank_order": "Xếp giảm dần theo match_score; bằng điểm thì ưu tiên objective_score cao hơn, sau đó tới service_code"
+  },
+  "guardrails": {
+    "lifecycle_status_excluded": [
+      "ARCHIVED"
+    ],
+    "active_only": true,
+    "need_verify_note": "Service còn verification_status = NEED_VERIFY vẫn được gợi ý, nhưng Validation Engine sẽ sinh NEED_MANUAL_VERIFICATION cho gói chứa service đó."
+  },
+  "optional_rules": {
+    "environment_hard_filter": false,
+    "note": "Bật thì loại service có use_case_score = 0 khi khách đã nêu hiện trường. Mặc định tắt; xem sheet 06 của D4 để biết vì sao cần cân nhắc."
+  }
+}

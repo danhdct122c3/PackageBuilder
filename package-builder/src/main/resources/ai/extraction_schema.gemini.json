@@ -1,0 +1,309 @@
+{
+  "title": "GASCOLAE — Requirement Extraction v1.1",
+  "description": "Kết quả AI trích xuất từ câu nhu cầu của khách. Ba trường *_raw giữ nguyên văn; các mảng mã đổ vào requirement_tags và requirement_expected_outputs. AI chỉ được chọn mã có trong enum, không tự đặt mã mới.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "objective_raw",
+    "objective_codes",
+    "confidence"
+  ],
+  "properties": {
+    "project_name": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Tên dự án nếu khách nêu"
+    },
+    "objective_raw": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Nguyên văn phần khách nói về mục tiêu"
+    },
+    "industry_raw": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Nguyên văn phần nói về ngành hoặc loại khách hàng"
+    },
+    "environment_raw": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Nguyên văn phần nói về hiện trường"
+    },
+    "area_value": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "description": "Diện tích hoặc chiều dài, chỉ lấy con số"
+    },
+    "area_unit": {
+      "description": "Đơn vị của area_value",
+      "anyOf": [
+        {
+          "type": "string",
+          "enum": [
+            "ha",
+            "km2",
+            "km",
+            "m2"
+          ]
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "objective_codes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "CARBON_CREDIT_MRV",
+          "CARBON_STOCK_ASSESSMENT",
+          "GHG_EMISSION_MEASUREMENT",
+          "EMISSION_REDUCTION_VERIFICATION",
+          "GHG_INVENTORY_SUPPORT",
+          "CARBON_FOOTPRINT_MAPPING",
+          "ESG_NETZERO",
+          "CLIMATE_RESEARCH",
+          "DROUGHT_WATER_STRESS",
+          "FIRE_RISK_PREVENTION",
+          "VEGETATION_CHANGE_MONITORING",
+          "STRUCTURAL_INSPECTION"
+        ]
+      },
+      "description": "Mục tiêu khách muốn đạt. Bắt buộc ít nhất 1 mã, nếu không suy ra được thì trả mảng rỗng và confidence thấp."
+    },
+    "environment_codes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "FOREST",
+          "RICE_FIELD",
+          "CROPLAND",
+          "LANDFILL",
+          "INDUSTRIAL_SITE",
+          "URBAN_AREA",
+          "BUILDING",
+          "MIXED_LAND_COVER"
+        ]
+      },
+      "description": "Loại hiện trường. Ruộng lúa dùng RICE_FIELD, không dùng CROPLAND."
+    },
+    "industry_codes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "FORESTRY",
+          "CONSERVATION",
+          "AGRICULTURE",
+          "WASTE_MANAGEMENT",
+          "INDUSTRIAL_MANUFACTURING",
+          "ENERGY_HEAVY_INDUSTRY",
+          "GOVERNMENT_AGENCY",
+          "RESEARCH_ACADEMIA",
+          "CARBON_PROJECT_DEVELOPER",
+          "CARBON_INVESTOR",
+          "CORPORATE_ESG",
+          "FIRE_SAFETY_AUTHORITY",
+          "REAL_ESTATE_BUILDING"
+        ]
+      }
+    },
+    "topic_codes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "carbon",
+          "ghg",
+          "co2",
+          "methane",
+          "mrv",
+          "biomass",
+          "forest",
+          "rice",
+          "landfill",
+          "urban",
+          "industrial",
+          "drought",
+          "soil-moisture",
+          "canopy-moisture",
+          "fire-risk",
+          "albedo",
+          "climate-research",
+          "vegetation",
+          "building",
+          "esg",
+          "lidar",
+          "multispectral",
+          "thermal",
+          "gas-sensor",
+          "rgb"
+        ]
+      },
+      "description": "Từ khóa chủ đề, chỉ lấy khi khách nhắc rõ"
+    },
+    "expected_output_codes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "DEM",
+          "GHG_INVENTORY",
+          "BASELINE_DATA",
+          "MULTI_PERIOD_IMAGERY",
+          "EMISSION_SOURCE_LIST",
+          "FOREST_PLOT_DATA",
+          "ORTHOMOSAIC",
+          "ELEVATION_MODEL",
+          "POINT_CLOUD",
+          "BIM_MODEL",
+          "SURFACE_TEMPERATURE_MAP",
+          "ALBEDO_VALUES",
+          "ALBEDO_MAP",
+          "REFLECTANCE_DATA",
+          "VEGETATION_INDEX_MAP",
+          "SOIL_MOISTURE_MAP",
+          "CANOPY_MOISTURE_MAP",
+          "DROUGHT_ZONE_MAP",
+          "DROUGHT_FORECAST",
+          "FIRE_RISK_MAP",
+          "CHANGE_MAP",
+          "GAS_CONCENTRATION_MAP",
+          "EMISSION_SOURCE_MAP",
+          "GAS_FLOW_DIAGRAM",
+          "EMISSION_HOTSPOTS",
+          "PRIORITY_INSPECTION_LIST",
+          "EMISSION_FLUX",
+          "EMISSION_REDUCTION_RESULT",
+          "LFG_COLLECTION_EFFICIENCY",
+          "CO2E_TABLE",
+          "CH4_POINT_FLUX_TABLE",
+          "SEASONAL_CH4_EMISSION",
+          "INTERVENTION_COMPARISON",
+          "CARBON_SINK_LAYER",
+          "TREE_LAYER",
+          "AGB_CARBON_STOCK_MAP",
+          "MONITORING_NETWORK_ASSESSMENT",
+          "MRV_REPORT",
+          "MONITORING_PLAN",
+          "QUANTIFICATION_WORKBOOK",
+          "VERIFICATION_RESPONSE",
+          "VERIFICATION_EVIDENCE",
+          "DEFECT_TABLE",
+          "CONDITION_REPORT",
+          "MEASUREMENT_DATA_QC",
+          "STATISTICS_TABLE",
+          "TECHNICAL_REPORT",
+          "QAQC_REPORT",
+          "ACCURACY_DATA",
+          "GIS_LAYER",
+          "METADATA_PACKAGE",
+          "DASHBOARD"
+        ]
+      },
+      "description": "Thứ khách muốn nhận. Đổ vào requirement_expected_outputs.data_item_id."
+    },
+    "available_input_codes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "ACTIVITY_DATA",
+          "AOI_BOUNDARY",
+          "AS_BUILT_DRAWINGS",
+          "BASELINE_ACTIVITY_DATA",
+          "BASELINE_DATA",
+          "BASEMAP_GIS",
+          "CONSTRUCTION_HISTORY",
+          "CROP_CALENDAR",
+          "CRS_SPEC",
+          "DEM",
+          "EMISSION_FACTORS",
+          "EMISSION_SOURCE_LIST",
+          "FIRE_SENSITIVE_POI",
+          "FOREST_INVENTORY_PREVIOUS",
+          "FOREST_PLOT_DATA",
+          "FOREST_STATUS_RECORDS",
+          "GHG_INVENTORY",
+          "LFG_METER_DATA",
+          "LFG_SYSTEM_LAYOUT",
+          "MAINTENANCE_RECORDS",
+          "MULTI_PERIOD_IMAGERY",
+          "OBSTACLE_INFO",
+          "OPERATION_HISTORY",
+          "OWNER_CONSENT",
+          "PROJECT_DESIGN_METHODOLOGY",
+          "REFERENCE_VALIDATION_DATA",
+          "SATELLITE_HISTORY",
+          "SCOPE_OBJECTIVE",
+          "SITE_ASSET_LAYOUT",
+          "SURFACE_TYPE_LIST",
+          "WATER_REGIME",
+          "WEATHER_DATA"
+        ]
+      },
+      "description": "Dữ liệu khách nói là đã có sẵn. Chỉ chọn mã trong danh sách (mã input do khách hoặc bên thứ ba cung cấp). Để rỗng nếu khách không nhắc."
+    },
+    "confidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "objective",
+        "overall"
+      ],
+      "properties": {
+        "objective": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "environment": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "industry": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "expected_output": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "topic": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "overall": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
+      },
+      "description": "Độ tin cậy 0–1 cho từng nhóm và cho cả lần trích xuất"
+    },
+    "notes": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Phần AI không chắc, viết cho Sales đọc. Không được bịa thông tin khách không nói."
+    }
+  }
+}

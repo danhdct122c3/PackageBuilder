@@ -1,5 +1,6 @@
 package gascolae.group9.package_builder.customer.entity;
 
+import gascolae.group9.package_builder.customer.enums.ExtractionMethod;
 import gascolae.group9.package_builder.customer.enums.RequirementStatus;
 import jakarta.persistence.*;
 import lombok.*;
@@ -68,6 +69,16 @@ public class CustomerRequirement {
     String serviceId;
 
     Integer level;
+
+    /** MANUAL (Sales tự nhập) hoặc AI (đã chạy D6). Có DEFAULT để ddl-auto thêm cột vào bảng đã có dữ liệu. */
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false, columnDefinition = "varchar(20) default 'MANUAL'")
+    @Builder.Default
+    ExtractionMethod extractionMethod = ExtractionMethod.MANUAL;
+
+    /** confidence.overall của lần trích xuất gần nhất, 0–1. */
+    @Column(precision = 5, scale = 4)
+    BigDecimal extractionConfidence;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false, length = 20)

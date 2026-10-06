@@ -23,6 +23,8 @@ public interface RequirementMapper {
     @Mapping(target = "createdAt", ignore = true)
     @Mapping(target = "updatedAt", ignore = true)
     @Mapping(target = "expectedOutputs", ignore = true)
+    @Mapping(target = "extractionMethod", ignore = true)
+    @Mapping(target = "extractionConfidence", ignore = true)
     @Mapping(target = "areaValue", expression = "java(request.getAreaValueAsBigDecimal())")
     @Mapping(target = "level", expression = "java(request.getLevelAsInteger())")
     CustomerRequirement toRequirement(RequirementCreateRequest request);
@@ -37,6 +39,8 @@ public interface RequirementMapper {
     @Mapping(target = "createdAt", ignore = true)
     @Mapping(target = "updatedAt", ignore = true)
     @Mapping(target = "expectedOutputs", ignore = true)
+    @Mapping(target = "extractionMethod", ignore = true)
+    @Mapping(target = "extractionConfidence", ignore = true)
     @Mapping(target = "areaValue", expression = "java(request.getAreaValueAsBigDecimal())")
     @Mapping(target = "areaUnit", expression = "java(request.getAreaUnit())")
     @Mapping(target = "level", expression = "java(request.getLevelAsInteger())")
@@ -72,6 +76,10 @@ public interface RequirementMapper {
     @Mapping(target = "createdAt", ignore = true)
     @Mapping(target = "updatedAt", ignore = true)
     @Mapping(target = "expectedOutputs", ignore = true)
+    @Mapping(target = "extractionMethod", ignore = true)
+    @Mapping(target = "extractionConfidence", ignore = true)
+    @Mapping(target = "areaValue", expression = "java(request.getAreaValueAsBigDecimal())")
+    @Mapping(target = "level", expression = "java(request.getLevelAsInteger())")
     @Mapping(target = "areaValue", expression = "java(request.getAreaValue() != null ? request.getAreaValueAsBigDecimal() : requirement.getAreaValue())")
     @Mapping(target = "level", expression = "java(request.getLevel() != null ? request.getLevelAsInteger() : requirement.getLevel())")
     void updateRequirementFromRequest(RequirementUpdateRequest request, @MappingTarget CustomerRequirement requirement);

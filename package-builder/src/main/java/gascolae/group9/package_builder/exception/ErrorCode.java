@@ -54,6 +54,13 @@ public enum ErrorCode {
     DATA_ITEM_NOT_FOUND(1502, "Dữ liệu taxonomy không tồn tại trong hệ thống", HttpStatus.NOT_FOUND),
     TAG_NOT_FOUND(1503, "Tag không tồn tại trong hệ thống", HttpStatus.NOT_FOUND),
     SERVICE_CODE_EXISTED(1504, "Mã dịch vụ đã tồn tại trong hệ thống", HttpStatus.BAD_REQUEST),
+
+    // 16xx - AI Extraction (D6)
+    EXTRACTION_INPUT_EMPTY(1601, "Chưa có câu nhu cầu hoặc trường mô tả nào để AI trích xuất", HttpStatus.BAD_REQUEST),
+
+    // 17xx - Recommendation (D4)
+    REQUIREMENT_NOT_CONFIRMED(1701, "Yêu cầu phải được Sales xác nhận trước khi chạy gợi ý dịch vụ", HttpStatus.BAD_REQUEST),
+    RECOMMENDATION_NOT_FOUND(1702, "Không tìm thấy gợi ý dịch vụ", HttpStatus.NOT_FOUND),
     ;
     private int code;
     private String message;

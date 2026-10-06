@@ -1,0 +1,130 @@
+[
+ {
+  "raw": {
+   "objective_raw": "x",
+   "objective_codes": [
+    "CARBON_STOCK_ASSESSMENT",
+    "CARBON_STOCK_ASSESSMENT",
+    "CARBON_CREDIT_MRV"
+   ],
+   "environment_codes": [
+    "FOREST",
+    "JUNGLE"
+   ],
+   "industry_codes": [
+    "FORESTRY",
+    "FORESTRY",
+    "FORESTRY"
+   ],
+   "topic_codes": [
+    "carbon",
+    "Carbon"
+   ],
+   "expected_output_codes": [
+    "MRV_REPORT",
+    "FAKE_OUT",
+    "MRV_REPORT"
+   ],
+   "available_input_codes": [
+    "AOI_BOUNDARY",
+    "MRV_REPORT"
+   ],
+   "confidence": {
+    "objective": 0.9,
+    "overall": 0.85
+   }
+  },
+  "result": {
+   "objective_codes": [
+    "CARBON_STOCK_ASSESSMENT",
+    "CARBON_CREDIT_MRV"
+   ],
+   "environment_codes": [
+    "FOREST"
+   ],
+   "industry_codes": [
+    "FORESTRY"
+   ],
+   "topic_codes": [
+    "carbon"
+   ],
+   "expected_output_codes": [
+    "MRV_REPORT"
+   ],
+   "available_input_codes": [
+    "AOI_BOUNDARY"
+   ]
+  },
+  "warnings": [
+   "Gộp mã trùng ở objective_codes: ['CARBON_STOCK_ASSESSMENT', 'CARBON_STOCK_ASSESSMENT', 'CARBON_CREDIT_MRV'] → ['CARBON_STOCK_ASSESSMENT', 'CARBON_CREDIT_MRV']",
+   "Loại mã không hợp lệ ở environment_codes: ['JUNGLE']",
+   "Gộp mã trùng ở industry_codes: ['FORESTRY', 'FORESTRY', 'FORESTRY'] → ['FORESTRY']",
+   "Loại mã không hợp lệ ở topic_codes: ['Carbon']",
+   "Gộp mã trùng ở expected_output_codes: ['MRV_REPORT', 'FAKE_OUT', 'MRV_REPORT'] → ['MRV_REPORT', 'FAKE_OUT']",
+   "Loại mã không hợp lệ ở expected_output_codes: ['FAKE_OUT']",
+   "Loại mã không hợp lệ ở available_input_codes: ['MRV_REPORT']"
+  ]
+ },
+ {
+  "raw": {
+   "objective_raw": null,
+   "objective_codes": [],
+   "environment_codes": [],
+   "industry_codes": [
+    "CIVIL_ENGINEERING"
+   ],
+   "topic_codes": [],
+   "expected_output_codes": [],
+   "available_input_codes": [],
+   "confidence": {
+    "objective": 0,
+    "overall": 0.2
+   },
+   "notes": "Nhu cầu ngoài phạm vi dịch vụ hiện có: khảo sát đê"
+  },
+  "result": {
+   "objective_codes": [],
+   "environment_codes": [],
+   "industry_codes": [],
+   "topic_codes": [],
+   "expected_output_codes": [],
+   "available_input_codes": []
+  },
+  "warnings": [
+   "Loại mã không hợp lệ ở industry_codes: ['CIVIL_ENGINEERING']"
+  ]
+ },
+ {
+  "raw": {
+   "objective_raw": "y",
+   "objective_codes": [
+    "GHG_EMISSION_MEASUREMENT"
+   ],
+   "environment_codes": [
+    "RICE_FIELD",
+    "CROPLAND",
+    "RICE_FIELD"
+   ],
+   "confidence": {
+    "objective": 0.8,
+    "overall": 0.6
+   }
+  },
+  "result": {
+   "objective_codes": [
+    "GHG_EMISSION_MEASUREMENT"
+   ],
+   "environment_codes": [
+    "RICE_FIELD",
+    "CROPLAND"
+   ],
+   "industry_codes": null,
+   "topic_codes": null,
+   "expected_output_codes": null,
+   "available_input_codes": null
+  },
+  "warnings": [
+   "Gộp mã trùng ở environment_codes: ['RICE_FIELD', 'CROPLAND', 'RICE_FIELD'] → ['RICE_FIELD', 'CROPLAND']"
+  ]
+ }
+]

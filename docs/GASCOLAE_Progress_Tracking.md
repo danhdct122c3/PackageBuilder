@@ -4,7 +4,7 @@
 - **Dự án**: GASCOLAE Service Package Builder (MVP 4 Tuần)
 - **Tài liệu kế hoạch**: [GASCOLAE_Implementation_Plan_4Weeks.md](./GASCOLAE_Implementation_Plan_4Weeks.md)
 - **Quy chuẩn lập trình**: [.agents/skills/package-builder-conventions/SKILL.md](../.agents/skills/package-builder-conventions/SKILL.md)
-- **Cập nhật lần cuối**: 2026-10-01 (Hoàn tất 100% Tuần 1, đã test thông luồng Landing Page -> Sales Admin B1, commit `2ef5435` lên nhánh `customer`)
+- **Cập nhật lần cuối**: 2026-10-05 (Tích hợp AI D6 Gemini + Recommendation Engine D4 theo bàn giao SV3, xem [GASCOLAE_AI_D6_D4_Integration.md](./GASCOLAE_AI_D6_D4_Integration.md))
 
 ---
 
@@ -15,10 +15,10 @@
 | **0. Khởi tạo & Quy chuẩn nền tảng** | 🟢 **ĐÃ XONG** | **100%** | Đã đọc hiểu MVP, DB V2, lập skill conventions, kế hoạch 4 tuần |
 | **Giai đoạn 0: Dọn dẹp & Đồng bộ nền tảng** | 🟢 **ĐÃ XONG** | **100%** | Sửa Swagger GET, gỡ annotation thừa Controller, update RoleName |
 | **Tuần 1: Customer & Requirement** | 🟢 **ĐÃ XONG** | **100%** | **Hoàn thành 100%**: Customer, Requirement CRUD, Public Landing Form, Admin B1, xử lý linh hoạt mọi kiểu dữ liệu |
-| **Tuần 2: Service Catalog & Recommendation** | 🟡 **ĐANG TIẾN HÀNH** | **60%** | Hoàn thành 100% Service Catalog & Master Data 10 bảng, Seeder tự động; chuẩn bị Matching Engine |
+| **Tuần 2: Service Catalog & Recommendation** | 🟢 **ĐÃ XONG (chờ chạy `mvnw test` + Gemini thật)** | **100%** | Catalog 10 bảng; AI Extraction D6 (Gemini 2 model + bảng từ khóa); Recommendation Engine D4; 14 test nghiệm thu khớp bản Python SV3 |
 | **Tuần 3: Package Builder & Validation Engine** | ⚪ CHƯA BẮT ĐẦU | **0%** | Gói dịch vụ, phân phase, Rule Engine quét Gap/Dependency |
 | **Tuần 4: Summary, E2E Testing & Demo** | ⚪ CHƯA BẮT ĐẦU | **0%** | Báo cáo bàn giao Sales-to-Ops, Test 3 kịch bản, Docker deploy |
-| **TỔNG THỂ MVP BACKEND** | 🟡 **ĐANG TIẾN HÀNH** | **~60%** | Hoàn thành Customer, Requirement, Catalog Master Data 10 bảng; sẵn sàng Recommendation Engine |
+| **TỔNG THỂ MVP BACKEND** | 🟡 **ĐANG TIẾN HÀNH** | **~70%** | Hoàn thành Customer, Requirement, Catalog, AI Extraction, Recommendation; tiếp theo Package Builder & Validation |
 
 ---
 
@@ -104,12 +104,22 @@
 - [x] `CatalogDataInitializer`: Runner tự động nạp toàn bộ 10 bảng dữ liệu Master Data từ CSV khi khởi động ứng dụng.
 - [x] Cấu hình Security: Mở public GET cho `/catalog/**` cho phép Frontend tra cứu danh mục dịch vụ, bảo vệ các thao tác ghi (POST/PUT/DELETE) bằng JWT Bearer Token.
 
-#### 2. Recommendation Engine (`recommendation/`) - [TIẾP THEO]:
-- [ ] Entity & Repository `ServiceRecommendation`.
-- [ ] Thuật toán tính điểm khớp nhu cầu có trọng số (Weighted Matching Engine):
-  $$\text{Score} = w_{\text{obj}} \cdot S_{\text{obj}} + w_{\text{usecase}} \cdot S_{\text{usecase}} + w_{\text{ind}} \cdot S_{\text{ind}} + w_{\text{output}} \cdot S_{\text{output}} + w_{\text{tag}} \cdot S_{\text{tag}}$$
-- [ ] Tự động sinh `recommendation_reason` tường minh.
-- [ ] API: `GET /api/requirements/{id}/recommendations`.
+#### 2. AI Extraction D6 (`extraction/`) - [ĐÃ HOÀN THÀNH, chờ test Gemini thật]:
+- [x] Nạp cấu hình SV3 vào `src/main/resources/ai/`: prompt v1.4, `extraction_schema.json`, `extraction_schema.gemini.json`, `keywords.json`, `matching_rules.json`.
+- [x] `GeminiClient`: Interactions API REST, `store=false`, `temperature=0`, timeout 60s, thử lại 1 lần khi 429/500/503, che key trong lỗi.
+- [x] `ExtractionPipeline`: model chính → model dự phòng → bảng từ khóa (không bao giờ ném lỗi 500).
+- [x] Hậu kiểm: gộp mã trùng → loại mã ngoài schema/DB → kiểm schema. Ngưỡng tin cậy HIGH / NEED_CONFIRM / INSUFFICIENT.
+- [x] Chế độ form cho lead từ landing page, không gửi tên/email/SĐT sang Gemini.
+- [x] Entity `RequirementTag` (`requirement_tags`), cột `extraction_method`, `extraction_confidence` trong `customer_requirements`.
+- [x] API: `POST /ai/extract`, `POST /requirements/{id}/extract`, `GET|PUT /requirements/{id}/codes`, `GET /ai/status`.
+- [x] Key chỉ đọc từ `GEMINI_API_KEY` (env hoặc `.env`), `.env` trong `.gitignore`/`.dockerignore`, docker-compose truyền biến.
+
+#### 3. Recommendation Engine D4 (`recommendation/`) - [ĐÃ HOÀN THÀNH]:
+- [x] Entity & Repository `ServiceRecommendation` (`service_recommendations`).
+- [x] `RecommendationScorer`: port 1:1 `score.py` v1.1 (trọng số 35/25/20/12/8, khớp mã cha 60, cùng nhóm đầu ra 70, bỏ tín hiệu trống, ngưỡng 40, tối đa 8).
+- [x] Sinh `recommendation_reason` tiếng Việt (đổi mã sang tên).
+- [x] API: `POST|GET /requirements/{id}/recommendations`, `PUT /recommendations/{id}/accept`.
+- [x] Test nghiệm thu: 64 phiếu khớp `score.py` (điểm lệch ≤ 0.01, shortlist, thứ tự, câu lý do).
 
 ---
 
@@ -154,4 +164,4 @@
 | **2026-10-01** | Antigravity | **Hoàn thiện luồng Landing Page $\rightarrow$ Sales Admin**: <br>1. Thêm DTO `LandingLeadRequest` hỗ trợ nhận form Landing Page (liên hệ + dự án + AOI + dữ liệu sẵn có + expected outputs dạng text/DTO).<br>2. Thêm trường `locationDescription`, `providedInputsRaw`, `monitoringFrequencyRaw` vào `CustomerRequirement`.<br>3. Viết hàm `submitLandingLead` trong `RequirementServiceImpl`: tự động liên kết/tạo Customer theo email/phone, tự sinh mã code, tạo Requirement DRAFT.<br>4. Mở API Public `POST /requirements/public/lead` (không cần Bearer token).<br>5. Bổ sung `contactEmail`, `contactPhone`, `locationDescription`, `providedInputsRaw` vào `RequirementResponse` phục vụ màn hình Admin B1.<br>6. Hỗ trợ cập nhật tên doanh nghiệp/khách hàng trực tiếp qua `PUT /requirements/{id}`.<br>7. Biên dịch `./mvnw test-compile` thành công 100% (65 source files). | Hoàn thiện luồng kết nối Form Landing Page $\rightarrow$ Admin B1. |
 | **2026-10-01** | Antigravity & User | **Kiểm thử E2E Postman & Vá lỗi Runtime**: <br>1. **Fix lỗi Jackson MismatchedInputException (`BigDecimal`)**: Đổi `areaValue` sang kiểu `Object` kết hợp bóc tách thông minh; tự động nhận số, chuỗi, hoặc chuỗi có đơn vị (`"20 ha"`, `"20ha"`, `"20.5 ha"`, `"1000 m2"`) thành số và đơn vị chuẩn.<br>2. **Fix lỗi Jackson no String-argument constructor (`ExpectedOutputRequest`)**: Bổ sung `@JsonCreator` constructor 1 tham số String cho phép nhận cả mảng chuỗi `["A", "B"]` và mảng object.<br>3. **Fix lỗi Jackson ValueString (`expectedOutputs: ""`)**: Đổi sang `Object expectedOutputs` kèm bộ bóc tách chuỗi rỗng và chuỗi textarea đa dòng `\n`.<br>4. **Fix lỗi PostgreSQL SQLGrammarException `lower(bytea)`**: Tối ưu `searchRequirements` và `searchCustomers` gọi trực tiếp `findAll(pageable)` khi không có bộ lọc và bọc lowercase `%` ở tầng Java.<br>5. **Đã commit `2ef5435` và push thành công lên `origin/customer`**. | Hoàn tất 100% Tuần 1, sẵn sàng cho Tuần 2 (Service Catalog). |
 | **2026-10-01** | Antigravity | **Triển khai Service Catalog Master Data & Seeder (Nhánh `serviceCatalog`)**: <br>1. Tiếp nhận bộ seed SV3 V2-final (10 bảng CSV + 2 JSON).<br>2. Tạo 6 Enums: `DataClassification`, `VerificationStatus`, `TagType`, `LifecycleStatus`, `ProvidedBy`, `RelationType`.<br>3. Tạo 10 Entities/Embeddables: `DataItem`, `Tag`, `Service`, `ServiceLevel`, `ServiceInput`, `ServiceOutput`, `ServiceDeliverable`, `ServiceDeliverableItem`, `ServiceTag`, `ServiceRelation`.<br>4. Tạo 10 Repositories Spring Data JPA.<br>5. Xây dựng tiện ích RFC-4180 `SimpleCsvParser` & kiểm thử unit test `SimpleCsvParserTest` pass 100% cả 10 file seed.<br>6. Viết `CatalogDataInitializer` tự động nạp dữ liệu Master Data từ CSV vào database khi khởi động.<br>7. Tạo DTOs & `CatalogMapper` (MapStruct), `CatalogService` & `CatalogServiceImpl`, `CatalogController` REST APIs.<br>8. Mở public GET cho `/catalog/**` trong `SecurityConfig.java`.<br>9. Biên dịch `./mvnw test-compile` thành công 100% (108 source files). | Hoàn thành **100% Service Catalog Master Data**, đạt mốc **~60%** tiến độ tổng thể. Sẵn sàng cho Recommendation Engine. |
-
+| **2026-10-05** | Claude & Don | **Tích hợp AI D6 + D4 từ bàn giao SV3**: <br>1. Module `extraction/` gọi Gemini thật (2 model + bảng từ khóa dự phòng), hậu kiểm, ngưỡng tin cậy, chế độ form.<br>2. Bảng `requirement_tags`, cột `extraction_method`/`extraction_confidence`.<br>3. Module `recommendation/` chấm điểm 12 dịch vụ, lưu `service_recommendations`, Sales chọn dịch vụ.<br>4. 14 test nghiệm thu đối chiếu bản Python của SV3 (đáp án trong `src/test/resources/sv3_reference`).<br>5. Cấu hình key qua `.env`/biến môi trường, docker-compose. | Đạt mốc **~70%**. Cần chạy `./mvnw test` trên máy và thử Gemini thật bằng `GET /api/ai/status?ping=true`. |

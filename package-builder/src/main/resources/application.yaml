@@ -4,11 +4,15 @@ server:
     context-path: /api
 
 spring:
+  # Cho phép đặt GEMINI_API_KEY, DB_PASSWORD... trong file .env (file này KHÔNG commit).
+  # Tìm ở thư mục đang chạy app: package-builder/ (mvnw, IntelliJ) hoặc thư mục gốc repo (VS Code).
+  config:
+    import: optional:file:.env[.properties],optional:file:package-builder/.env[.properties]
   datasource:
     url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:postgres}?currentSchema=${DB_SCHEMA:package_builder}&options=-c%20TimeZone=UTC
     driver-class-name: org.postgresql.Driver
-    username: postgres
-    password: 123
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:123}
 
   jpa:
     hibernate:
@@ -26,6 +30,15 @@ jwt:
   signerKey: "hh@-#4O@;HV?=vx[,V&1,o6m>cL}47d/V&kh*6c]A}YV!6^aTrKA>P%)DHj$d@)sM:B^vdZ56{!C2&jA^_[H?Z"
   valid-duration: 1800 # inseconds
   refreshable-duration: 5400 # inseconds
+
+# AI D6 (Gemini). Key CHỈ đọc từ biến môi trường / file .env — không ghi key vào file này.
+gemini:
+  api-key: ${GEMINI_API_KEY:}
+  endpoint: https://generativelanguage.googleapis.com/v1beta/interactions
+  # Thứ tự thử: model chính, model dự phòng; cả hai lỗi thì dùng bảng từ khóa.
+  models: ${GEMINI_MODELS:gemini-3.8-flash,gemini-3.1-flash-lite}
+  timeout-seconds: ${GEMINI_TIMEOUT_SECONDS:60}
+  retry-wait-seconds: 3
 
 app:
   cors:

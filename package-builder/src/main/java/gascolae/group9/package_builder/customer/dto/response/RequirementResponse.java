@@ -1,5 +1,6 @@
 package gascolae.group9.package_builder.customer.dto.response;
 
+import gascolae.group9.package_builder.customer.enums.ExtractionMethod;
 import gascolae.group9.package_builder.customer.enums.RequirementStatus;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
@@ -34,6 +35,8 @@ public class RequirementResponse {
     String providedInputsRaw;
     String serviceId;
     Integer level;
+    ExtractionMethod extractionMethod;
+    BigDecimal extractionConfidence;
     RequirementStatus status;
     String createdBy;
     String confirmedBy;
